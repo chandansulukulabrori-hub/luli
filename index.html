@@ -1,21 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Birthday 🌻</title>
+<title>Selamat Ulang Tahun 🌻</title>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Caveat:wght@500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 /* =====================================================================
    PREMIUM SUNFLOWER BIRTHDAY CARD TEMPLATE
-   ---------------------------------------------------------------------
-   CUSTOMIZE HERE:
-   1) Recipient name  -> search for "For You" (gift tag) and the <h1>
-   2) Birthday message -> .pesan-utama paragraphs + #surat letter lines
-   3) Photos            -> img01.jpeg ... img05.jpeg (5 slider images)
-   4) Music              -> audio src="birthday.mp3" + player title/artist
-   Color palette: Primary #FFC107, Secondary #F9A825, Background #FFF8E1,
-   Brown #795548, Dark Text #5D4037
    ===================================================================== */
 
 :root{
@@ -123,7 +115,7 @@ body{
     position: relative;
     max-width: 250px;
     margin: 20px auto;
-    touch-action: pan-y; /* keep horizontal swipe from fighting vertical scroll */
+    touch-action: pan-y;
 }
 
 .slider-foto {
@@ -321,8 +313,7 @@ p{
     transform: translateY(0);
 }
 
-/* Letter lines: warm handwritten font, revealed one by one via JS
-   (the "tampil" class) so spacing/timing can be controlled precisely. */
+/* Letter lines: warm handwritten font, revealed one by one via JS */
 .baris-surat {
     font-family: 'Caveat', cursive;
     font-size: 24px;
@@ -340,9 +331,7 @@ p{
     transform: translateY(0);
 }
 
-/* Sunflower watermark at the bottom of the letter, clipped through a
-   separate wrapper so it stays inside the card's rounded corners.
-   Revealed later via JS. */
+/* Sunflower watermark at the bottom of the letter */
 .surat-tanda-air-wrap {
     position: absolute;
     inset: 0;
@@ -378,7 +367,7 @@ p{
     50% { transform: rotate(1.2deg); }
 }
 
-/* Falling golden confetti, played once the letter reveal finishes */
+/* Falling golden confetti */
 .kelopak{
     position:fixed;
     top:-20px;
@@ -409,7 +398,7 @@ p{
     left: 0;
     width: 100%;
     height: 100vh;
-    height: 100dvh; /* avoids iOS Safari address-bar collapse/expand glitches */
+    height: 100dvh;
     background: rgba(0,0,0,0.85);
     z-index: 9999;
     justify-content: center;
@@ -444,7 +433,7 @@ p{
     background-size: 18px 18px;
 }
 
-/* Small gift tag in the corner, holds the recipient's name */
+/* Small gift tag in the corner */
 .tag-gantung {
     position: absolute;
     top: -14px;
@@ -512,16 +501,17 @@ p{
 
 </head>
 <body>
-<audio id="laguLatar" src="birthday.mp3" preload="metadata"></audio>
+<!-- Bagean Musik Sudah Diganti -->
+<audio id="laguLatar" src="Jamrud.mp3" preload="metadata"></audio>
 
 <div class="kado-bingkai">
-    <div class="tag-gantung">🌻 For You</div>
+    <div class="tag-gantung">🌻 Untukmu</div>
 
-    <h1>Happy Birthday 🌻</h1>
+    <h1>Selamat Ulang Tahun 🌻</h1>
 
     <!-- ===== Mini Music Player ===== -->
     <div class="player-wrap">
-        <button class="player-tombol" id="tombolMusik" onclick="toggleMusik()" aria-label="Play or pause the song">
+        <button class="player-tombol" id="tombolMusik" onclick="toggleMusik()" aria-label="Putar atau hentikan lagu">
             <svg id="ikonPlay" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             <svg id="ikonPause" viewBox="0 0 24 24" style="display:none;"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
         </button>
@@ -535,22 +525,22 @@ p{
     </div>
 
     <div class="slider-container" id="sliderContainer">
-        <img class="slider-foto aktif" src="img01.jpeg" alt="Memory photo 1" onclick="bukaFoto(this.src)" loading="lazy">
-        <img class="slider-foto" src="img02.jpeg" alt="Memory photo 2" onclick="bukaFoto(this.src)" loading="lazy">
-        <img class="slider-foto" src="img03.jpeg" alt="Memory photo 3" onclick="bukaFoto(this.src)" loading="lazy">
-        <img class="slider-foto" src="img04.jpeg" alt="Memory photo 4" onclick="bukaFoto(this.src)" loading="lazy">
-        <img class="slider-foto" src="img05.jpeg" alt="Memory photo 5" onclick="bukaFoto(this.src)" loading="lazy">
+        <img class="slider-foto aktif" src="img01.jpeg" alt="Foto kenangan 1" onclick="bukaFoto(this.src)" loading="lazy">
+        <img class="slider-foto" src="img02.jpeg" alt="Foto kenangan 2" onclick="bukaFoto(this.src)" loading="lazy">
+        <img class="slider-foto" src="img03.jpeg" alt="Foto kenangan 3" onclick="bukaFoto(this.src)" loading="lazy">
+        <img class="slider-foto" src="img04.jpeg" alt="Foto kenangan 4" onclick="bukaFoto(this.src)" loading="lazy">
+        <img class="slider-foto" src="img05.jpeg" alt="Foto kenangan 5" onclick="bukaFoto(this.src)" loading="lazy">
     </div>
 
     <div class="dot-container" id="dotContainer"></div>
-    <p class="petunjuk-swipe">← swipe photos →</p>
+    <p class="petunjuk-swipe">← geser foto →</p>
     <p class="status-muat" id="statusMuat" style="display:none;"></p>
 
-    <p class="pesan-utama">Wishing you a day as bright and warm as sunflowers in full bloom 🌻</p>
-    <p class="pesan-utama kedua">May this year bring you joy, good health, and beautiful new memories.</p>
+    <p class="pesan-utama">Semoga harimu secerah dan sehangat bunga matahari yang sedang mekar 🌻</p>
+    <p class="pesan-utama kedua">Semoga tahun ini membawa kebahagiaan, kesehatan yang baik, dan kenangan baru yang indah.</p>
 
     <div class="amplop-wrap" id="amplopWrap">
-        <div class="amplop" id="amplop" onclick="munculSurat()" onkeypress="if(event.key==='Enter'){munculSurat();}" role="button" tabindex="0" aria-label="Open the letter">
+        <div class="amplop" id="amplop" onclick="munculSurat()" onkeypress="if(event.key==='Enter'){munculSurat();}" role="button" tabindex="0" aria-label="Buka surat">
             <div class="badan">
                 <svg class="jahitan" viewBox="0 0 130 71" preserveAspectRatio="none">
                     <path d="M6,6 C40,32 55,42 65,42 C75,42 90,32 124,6" stroke="rgba(255,255,255,0.4)" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
@@ -563,7 +553,7 @@ p{
             </div>
             <div class="amplop-aksen">🌻</div>
         </div>
-        <div class="amplop-label" id="amplopLabel">Tap the envelope to read the letter</div>
+        <div class="amplop-label" id="amplopLabel">Ketuk amplop untuk membaca surat</div>
     </div>
 
     <div id="surat">
@@ -572,15 +562,15 @@ p{
                 <svg id="svgSunflower" viewBox="0 0 300 380" aria-hidden="true"></svg>
             </div>
         </div>
-        <h3>Happy Birthday 🌻</h3>
-        <p class="baris-surat">May this special day bring happiness, good health, wonderful memories, and success in everything you do.</p>
-        <p class="baris-surat">May all your dreams come true, little by little.</p>
-        <p class="baris-surat">Enjoy your special day! 🌻</p>
+        <h3>Selamat Ulang Tahun 🌻</h3>
+        <p class="baris-surat">Semoga hari spesial ini membawa kebahagiaan, kesehatan yang baik, kenangan indah, dan kesuksesan dalam segala hal yang kamu lakukan.</p>
+        <p class="baris-surat">Semoga semua mimpimu menjadi kenyataan, sedikit demi sedikit.</p>
+        <p class="baris-surat">Nikmati hari spesialmu! 🌻</p>
     </div>
 </div>
 
 <div id="fotoBesar" onclick="tutupFoto()">
-    <img src="" alt="Enlarged photo">
+    <img src="" alt="Foto diperbesar">
 </div>
 
 <script>
@@ -592,9 +582,6 @@ function toggleMusik() {
     let eq = document.getElementById("playerEq");
 
     if (audio.paused) {
-        // Called directly inside the click handler (not via a delayed
-        // setTimeout/promise) so iOS Safari treats it as a valid user
-        // gesture and doesn't block autoplay.
         let janji = audio.play();
         if (janji !== undefined) {
             janji.then(function() {
@@ -602,9 +589,6 @@ function toggleMusik() {
                 ikonPause.style.display = "block";
                 eq.classList.add("aktif");
             }).catch(function() {
-                // If playback still fails (rare, since this already
-                // follows a user tap), leave the button in "play" state
-                // so the user can try again.
             });
         }
     } else {
@@ -621,8 +605,6 @@ document.getElementById("laguLatar").addEventListener("ended", function() {
     document.getElementById("playerEq").classList.remove("aktif");
 });
 
-// ===== Draw a single elegant sunflower (line-art, low opacity watermark) =====
-// Used as a subtle background accent inside the letter, revealed later via JS.
 function drawSunflower() {
     const svgNS = "http://www.w3.org/2000/svg";
     const svg = document.getElementById("svgSunflower");
@@ -630,13 +612,12 @@ function drawSunflower() {
 
     const pusat = { x: 150, y: 150 };
     const jumlahKelopak = 18;
-    const rInner = 34;   // inner radius, where petals start
-    const rOuter = 78;   // outer radius, petal tip
+    const rInner = 34;   
+    const rOuter = 78;   
 
     let defs = document.createElementNS(svgNS, "defs");
     svg.appendChild(defs);
 
-    // Stem, curving gently down to the base of the composition
     let batang = document.createElementNS(svgNS, "path");
     batang.setAttribute("d", "M150,210 C145,260 155,300 150,360");
     batang.setAttribute("stroke", "#795548");
@@ -645,7 +626,6 @@ function drawSunflower() {
     batang.setAttribute("class", "svg-tangkai");
     svg.appendChild(batang);
 
-    // A pair of simple leaves
     const daunPaths = [
         "M150,270 C110,262 85,280 78,310 C112,308 138,292 150,270 Z",
         "M150,320 C185,314 208,330 214,358 C182,358 158,344 150,320 Z"
@@ -657,7 +637,6 @@ function drawSunflower() {
         svg.appendChild(daun);
     });
 
-    // Petals, evenly spaced around the flower head
     const grupKelopak = document.createElementNS(svgNS, "g");
     for (let i = 0; i < jumlahKelopak; i++) {
         let sudut = (360 / jumlahKelopak) * i;
@@ -672,7 +651,6 @@ function drawSunflower() {
         kelopak.setAttribute("transform", "translate(" + xDalam.toFixed(1) + "," + yDalam.toFixed(1) + ") rotate(" + sudut + ")");
 
         let bentuk = document.createElementNS(svgNS, "path");
-        // Simple pointed petal shape, drawn along local +y axis then rotated into place
         let panjang = rOuter - rInner;
         bentuk.setAttribute("d",
             "M0,0 C-9,10 -8," + (panjang * 0.65).toFixed(1) + " 0," + panjang.toFixed(1) +
@@ -683,10 +661,8 @@ function drawSunflower() {
         grupKelopak.appendChild(kelopak);
     }
     svg.appendChild(grupKelopak);
-    // Silence unused xLuar/yLuar lint warnings in strict environments
     void 0;
 
-    // Seed-head center: a solid disc plus a light dot pattern for texture
     let inti = document.createElementNS(svgNS, "circle");
     inti.setAttribute("cx", pusat.x);
     inti.setAttribute("cy", pusat.y);
@@ -719,7 +695,6 @@ drawSunflower();
 let indeksFoto = 0;
 const daftarFoto = document.getElementsByClassName("slider-foto");
 
-// ===== Preload all images + fallback if one fails to load =====
 function preloadGambar() {
     let totalGambar = daftarFoto.length;
     let selesai = 0;
@@ -740,13 +715,13 @@ function preloadGambar() {
             gagalList.push(imgAsli);
             let namaFileAsli = imgAsli.getAttribute("src");
             imgAsli.classList.add("gagal-muat");
-            imgAsli.alt = "Photo not found: " + namaFileAsli;
+            imgAsli.alt = "Foto tidak ditemukan: " + namaFileAsli;
             imgAsli.setAttribute("data-src-asli", namaFileAsli);
             imgAsli.src = "data:image/svg+xml;utf8," + encodeURIComponent(
                 '<svg xmlns="http://www.w3.org/2000/svg" width="250" height="330">' +
                 '<rect width="100%" height="100%" fill="#ffecb3"/>' +
                 '<text x="50%" y="48%" text-anchor="middle" font-size="40" font-family="sans-serif">📷</text>' +
-                '<text x="50%" y="60%" text-anchor="middle" font-size="14" fill="#795548" font-family="sans-serif">Photo not found</text>' +
+                '<text x="50%" y="60%" text-anchor="middle" font-size="14" fill="#795548" font-family="sans-serif">Foto tidak ditemukan</text>' +
                 '</svg>'
             );
             imgAsli.onerror = null;
@@ -759,19 +734,18 @@ function preloadGambar() {
     function cekSelesai() {
         if (selesai === totalGambar && gagalList.length > 0) {
             statusEl.style.display = "block";
-            statusEl.textContent = gagalList.length + " photo(s) failed to load, please check the filenames 📁";
+            statusEl.textContent = gagalList.length + " foto gagal dimuat, silakan periksa nama filenya 📁";
         }
     }
 }
 preloadGambar();
 
-// Build dot indicators to match the number of photos; each dot is tappable
 function buatDot() {
     let dotContainer = document.getElementById("dotContainer");
     for (let i = 0; i < daftarFoto.length; i++) {
         let tombolDot = document.createElement("button");
         tombolDot.className = "dot-tap";
-        tombolDot.setAttribute("aria-label", "View photo " + (i + 1));
+        tombolDot.setAttribute("aria-label", "Lihat foto " + (i + 1));
         tombolDot.onclick = (function(indeks) {
             return function() { lompatKeFoto(indeks); };
         })(i);
@@ -823,7 +797,6 @@ function geserFoto(arah) {
     tampilkanFotoAktif();
 }
 
-// Jump directly to a specific photo via dot click
 function lompatKeFoto(indeksTujuan) {
     if (indeksTujuan === indeksFoto) return;
     daftarFoto[indeksFoto].classList.remove("aktif");
@@ -835,7 +808,7 @@ function lompatKeFoto(indeksTujuan) {
 function pasangSwipe(elemen, callbackGeser) {
     let touchStartX = 0;
     let touchEndX = 0;
-    const ambangBatas = 40; // minimum drag distance (px) to count as a swipe
+    const ambangBatas = 40; 
 
     elemen.addEventListener("touchstart", function(e) {
         touchStartX = e.changedTouches[0].screenX;
@@ -846,9 +819,9 @@ function pasangSwipe(elemen, callbackGeser) {
         let jarak = touchEndX - touchStartX;
         if (Math.abs(jarak) > ambangBatas) {
             if (jarak < 0) {
-                callbackGeser(1); // swipe left -> next photo
+                callbackGeser(1); 
             } else {
-                callbackGeser(-1); // swipe right -> previous photo
+                callbackGeser(-1); 
             }
         }
     }, { passive: true });
@@ -861,8 +834,6 @@ pasangSwipe(document.getElementById("fotoBesar"), geserFoto);
 // ===== Cinematic letter-opening sequence (JS-controlled) =====
 // ================================================================
 
-// Skip timed delays when the user prefers reduced motion, while still
-// running the full sequence (so the confetti step still fires).
 const gerakMinim = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function tunda(ms) {
@@ -871,9 +842,6 @@ function tunda(ms) {
     });
 }
 
-// Waits for one transitionend event from a given element, with a fallback
-// timeout so the sequence never stalls if the event never fires (e.g. the
-// element gets hidden by the browser before the transition completes).
 function tungguTransisi(elemen, msFallback) {
     if (gerakMinim) return Promise.resolve();
     return new Promise(function(resolve) {
@@ -890,7 +858,6 @@ function tungguTransisi(elemen, msFallback) {
     });
 }
 
-// Same as above, but for animationend (used by the sunflower watermark keyframes etc.)
 function tungguAnimasi(elemen, msFallback) {
     if (gerakMinim) return Promise.resolve();
     return new Promise(function(resolve) {
@@ -917,46 +884,36 @@ async function munculSurat(){
     let judul = surat.querySelector("h3");
     let semuaBaris = surat.querySelectorAll(".baris-surat");
 
-    if (amplop.classList.contains("terbuka")) return; // prevent repeated taps
+    if (amplop.classList.contains("terbuka")) return; 
 
-    // 1. Envelope is tapped, flap opens
     amplop.classList.add("terbuka");
-    amplopLabel.textContent = "💌 Letter opened";
+    amplopLabel.textContent = "💌 Surat telah dibuka";
 
-    // 2. Wait for the flap-opening transition to fully finish
     await tungguTransisi(flap, 950);
 
-    // 3. Fade the envelope out, then remove it from the layout
     amplopWrap.classList.add("tersembunyi");
     await tungguTransisi(amplopWrap, 500);
     amplopWrap.classList.add("tersembunyi-total");
 
-    // 4. Letter slides up as if emerging from the envelope, with a spring effect
     surat.classList.add("muncul");
     await tungguAnimasi(surat, 900);
 
-    // 5. Sunflower watermark fades in from below
     watermark.classList.add("tampil");
     await tungguTransisi(watermark, 1000);
 
-    // 6. Letter heading appears
     judul.classList.add("tampil");
     await tungguTransisi(judul, 600);
 
-    // 7. Each letter line appears one at a time
     for (let i = 0; i < semuaBaris.length; i++) {
         let baris = semuaBaris[i];
         baris.classList.add("tampil");
         await tungguTransisi(baris, 650);
-        await tunda(550); // ~500-700ms pause between lines
+        await tunda(550); 
     }
 
-    // 8. Once everything has finished revealing, the confetti falls
     mulaiKelopakJatuh();
 }
 
-// Golden confetti as a closing touch, kept as its own function so it only
-// runs after the whole letter reveal is truly finished.
 function mulaiKelopakJatuh() {
     const warnaKelopak = ["#FFC107", "#F9A825", "#FDD835", "#795548"];
     let jumlahKelopak = gerakMinim ? 0 : 16;
@@ -977,7 +934,7 @@ function bukaFoto(jalurGambar){
     let gambarPopUp = document.querySelector("#fotoBesar img");
     gambarPopUp.onerror = function() {
         gambarPopUp.classList.add("gagal-muat");
-        gambarPopUp.alt = "Photo not found";
+        gambarPopUp.alt = "Foto tidak ditemukan";
     };
     gambarPopUp.src = jalurGambar;
     gambarPopUp.classList.remove("gagal-muat");
